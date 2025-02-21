@@ -14,3 +14,7 @@ add_executable(amaze ${AMAZEGEN_SOURCES})
 target_link_libraries(amaze PRIVATE SFML::Graphics)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -Wextra -pedantic")
+
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/bin/config")
+
+file(COPY config/ DESTINATION "${CMAKE_BINARY_DIR}/bin/config")
