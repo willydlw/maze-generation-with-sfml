@@ -1,9 +1,11 @@
-#ifndef CELL_H_INCLUDED
-#define CELL_H_INCLUDED
+#ifndef MAZEGEN_CELL_HPP
+#define MAZEGEN_CELL_HPP
 
 #include <SFML/Graphics/Color.hpp>
 
-struct Cell{
+namespace mazegen{
+
+    struct Cell{
     int row;
     int col;
 
@@ -16,7 +18,9 @@ struct Cell{
     Cell( ) : row(0), col(0), visited(false), rightWall(true), downWall(true) {}
     Cell(int r, int c) : row(r), col(c), visited(false), 
             rightWall(true), downWall(true) {}
-};
+    };
+
+} // end namespace mazegen
 
 
-#endif 
+#endif // MAZEGEN_CELL_HPP

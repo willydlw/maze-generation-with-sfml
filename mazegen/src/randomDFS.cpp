@@ -1,3 +1,7 @@
-#include "randomDFS.h"
+#include "randomDFS.hpp"
 
-RandomizedDFS::RandomizedDFS() {}
+namespace mazegen
+{
+    RandomizedDFS::RandomizedDFS() {}
+}
+

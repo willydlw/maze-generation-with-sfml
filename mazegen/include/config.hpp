@@ -1,6 +1,9 @@
-#pragma once
+#ifndef MAZEGEN_CONFIG_HPP
+#define MAZEGEN_CONFIG_HPP
 
-struct GridConfig {
+namespace mazegen{
+
+    struct GridConfig {
 
     static constexpr int DEFAULT_ROWS = 10;
     static constexpr int DEFAULT_COLS = 10;
@@ -21,4 +24,26 @@ struct GridConfig {
                         cellSize(cellSize), 
                         wallThickness(wallThickness) { }
 
-};
+    };
+
+
+    struct SimConfig{
+        static constexpr unsigned int SIMULATION_WINDOW_WIDTH = 800U;
+        static constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 600U;
+
+        unsigned int window_width;
+        unsigned int window_height;
+        GridConfig gc;
+
+
+        SimConfig(int width = SIMULATION_WINDOW_WIDTH, 
+                    int height = SIMULATION_WINDOW_HEIGHT) : 
+                    window_width(width),
+                    window_height(height)
+        {}
+    };
+
+}   // end namespace mazegen
+
+
+#endif // MAZEGEN_CONFIG_HPP
