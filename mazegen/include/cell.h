@@ -1,18 +1,21 @@
 #ifndef CELL_H_INCLUDED
 #define CELL_H_INCLUDED
 
+#include <SFML/Graphics/Color.hpp>
+
 struct Cell{
-    int x;
-    int y;
+    int row;
+    int col;
 
     bool visited;
-    bool wallRight;
-    bool wallDown;
+    bool rightWall;
+    bool downWall;
+    
+    sf::Color color;
 
-    //sf::Color color;
-
-    Cell(const int& x, const int& y) : x(x), y(y), visited(false), 
-            wallRight(true), wallDown(true) {}
+    Cell( ) : row(0), col(0), visited(false), rightWall(true), downWall(true) {}
+    Cell(int r, int c) : row(r), col(c), visited(false), 
+            rightWall(true), downWall(true) {}
 };
 
 

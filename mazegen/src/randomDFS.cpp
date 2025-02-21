@@ -1,3 +1,3 @@
 #include "randomDFS.h"
 
-RandomDFS::RandomDFS() {}
+RandomizedDFS::RandomizedDFS() {}

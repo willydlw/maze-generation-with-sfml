@@ -3,14 +3,22 @@
 #include <vector>
 
 #include "cell.h"
+#include "config.h"
 
 class Grid{
     public:
 
-    Grid();
+    Grid(const GridConfig& gc);
 
     private:
 
-    std::vector<Cell> grid;
+    // private member functions
+    void init();
+
+    // data members 
+    int m_rows;
+    int m_cols;
+
+    std::vector<Cell> m_grid;
 
 };
