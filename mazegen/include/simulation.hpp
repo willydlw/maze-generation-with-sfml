@@ -19,10 +19,10 @@ namespace mazegen
 
     private:
 
-        void init();
+        void init(const SimConfig& sc);
         void loadConfig(const char* configFileName);
 
-        sf::RenderWindow window;
+        sf::RenderWindow m_window;
 
 
 
