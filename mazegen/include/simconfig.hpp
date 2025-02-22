@@ -9,9 +9,6 @@ namespace mazegen
     constexpr unsigned int SIMULATION_WINDOW_WIDTH = 800U;
     constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 800U;
 
-    //
-
-
     namespace MAZE
     {
         // Grid Defaults

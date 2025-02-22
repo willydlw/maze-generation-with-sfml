@@ -1,5 +1,7 @@
 #include "maze.hpp"
 
+#include <iostream>
+
 namespace mazegen{
 
     Maze::Maze()
@@ -36,9 +38,22 @@ namespace mazegen{
         sf::RectangleShape horzWall(sf::Vector2f{static_cast<float>(mWallLength), static_cast<float>(mWallThickness)});
         horzWall.setFillColor(CELLCOLORS::WALL);
 
+
+        static int count = 0;
+        if(count == 0){
+            std::cerr << __func__ << ", ready to draw lines\n";
+            count++;
+        }
+
         for(int r = 0; r < mRows; r++){
             for(int c = 0; c < mCols; c++){
                 int i = r * mCols + c;
+                static int printCount = 0;
+                if(printCount == 0)
+                {
+                    std::cerr << "i: " << i << ", state: " << mGrid[i].state << "\n";
+                    printCount++;
+                }
 
                 if(mGrid[i].state & Cell::DOWN_WALL){
                     float x = static_cast<float>(c * mCellSize);
