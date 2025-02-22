@@ -13,6 +13,7 @@ namespace mazegen
 
     void Simulation::init(const SimConfig& sc)
     {
+        dfs = DFS(sc.mc);
         m_window.create(sf::VideoMode({sc.window_width, sc.window_height}), "Maze Generation");  
     }
 
@@ -48,6 +49,7 @@ namespace mazegen
             }
 
             m_window.clear(sf::Color::Black);
+            dfs.draw(m_window);
             m_window.display();
         }
     }

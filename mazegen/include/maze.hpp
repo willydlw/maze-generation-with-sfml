@@ -1,6 +1,8 @@
 #ifndef MAZEGEN_MAZE_HPP
 #define MAZEGEN_MAZE_HPP
 
+#include <SFML/Graphics.hpp>
+
 #include <vector>
 
 #include "cell.hpp"
@@ -9,25 +11,31 @@
 namespace mazegen
 {
     class Maze{
-        public:
+    public:
 
+        // constructors
+        Maze();
         Maze(const MazeConfig& mc);
 
-        TODO: Complete draw function
-        void draw(void);
+       
+        void draw(sf::RenderWindow& window);
 
-        private:
+    private:
 
         // private member functions
         void init();
 
-        // data members 
-        int m_rows;
-        int m_cols;
-        int m_totalCells;           // Yes, this takes extra memory but reduces the number of 
-                                    // multiplications of m_rows * m_cols in the simulation          
+        // grid size data members 
+        int mRows;
+        int mCols;
 
-        std::vector<Cell> m_grid;
+        // drawing data members
+        int mWallLength;
+        int mWallThickness;
+        int mCellSize;
+
+
+        std::vector<Cell> mGrid;
 
     };
 

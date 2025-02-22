@@ -25,9 +25,9 @@ namespace mazegen
 
         sf::RenderWindow m_window;
 
+        DFS dfs;
 
-
-};
+    };
 
 }
 

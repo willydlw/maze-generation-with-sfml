@@ -3,6 +3,8 @@
 
 #include "maze.hpp"
 
+#include <stack>
+
 namespace mazegen
 {
     class DFS : public Maze
@@ -10,7 +12,13 @@ namespace mazegen
 
         public:
 
+        DFS();
+
         DFS(const MazeConfig& mc);
+
+        private:
+
+        std::stack<Cell*> searchStack;
 
     };
 
