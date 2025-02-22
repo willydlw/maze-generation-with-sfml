@@ -6,18 +6,21 @@
 namespace mazegen{
 
     struct Cell{
-    int row;
-    int col;
 
-    bool visited;
-    bool rightWall;
-    bool downWall;
-    
-    sf::Color color;
+        static constexpr unsigned int RIGHT_WALL = 0x1;
+        static constexpr unsigned int DOWN_WALL = 0x2;
+        static constexpr unsigned int VISITED = 0x4;
+        static constexpr unsigned int INIT_STATE = RIGHT_WALL | DOWN_WALL; 
 
-    Cell( ) : row(0), col(0), visited(false), rightWall(true), downWall(true) {}
-    Cell(int r, int c) : row(r), col(c), visited(false), 
-            rightWall(true), downWall(true) {}
+        int row;
+        int col;
+
+        unsigned int state;
+
+        sf::Color color;
+
+        Cell() : row(0), col(0), state(INIT_STATE) {}
+        Cell(int r, int c) : row(r), col(c), state(INIT_STATE) {}
     };
 
 } // end namespace mazegen

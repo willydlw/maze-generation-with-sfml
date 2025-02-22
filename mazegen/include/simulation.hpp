@@ -6,7 +6,8 @@
 /////////////////////////////////
 #include <SFML/Graphics.hpp>
 
-#include "config.hpp"
+#include "simconfig.hpp"
+#include "dfs.hpp"
 
 namespace mazegen
 {

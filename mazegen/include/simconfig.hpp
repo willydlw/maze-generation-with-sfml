@@ -3,7 +3,7 @@
 
 namespace mazegen{
 
-    struct GridConfig {
+    struct MazeConfig {
 
     static constexpr int DEFAULT_ROWS = 10;
     static constexpr int DEFAULT_COLS = 10;
@@ -15,25 +15,25 @@ namespace mazegen{
     int cellSize;
     int wallThickness;
 
-    explicit GridConfig(int numRows = DEFAULT_ROWS, 
-                        int numCols = DEFAULT_COLS, 
-                        int cellSize = DEFAULT_CELL_SIZE, 
-                        int wallThickness = DEFAULT_WALL_THICKNESS) : 
-                        rows(numRows), 
-                        cols(numCols), 
-                        cellSize(cellSize), 
-                        wallThickness(wallThickness) { }
+    MazeConfig  (int numRows = DEFAULT_ROWS, 
+                int numCols = DEFAULT_COLS, 
+                int cellSize = DEFAULT_CELL_SIZE, 
+                int wallThickness = DEFAULT_WALL_THICKNESS) : 
+                    rows(numRows), 
+                    cols(numCols), 
+                    cellSize(cellSize), 
+                    wallThickness(wallThickness) { }
 
     };
 
 
     struct SimConfig{
         static constexpr unsigned int SIMULATION_WINDOW_WIDTH = 800U;
-        static constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 600U;
+        static constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 800U;
 
         unsigned int window_width;
         unsigned int window_height;
-        GridConfig gc;
+        MazeConfig mc;
 
 
         SimConfig(int width = SIMULATION_WINDOW_WIDTH, 
