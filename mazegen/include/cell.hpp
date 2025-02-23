@@ -7,7 +7,7 @@ namespace mazegen{
 
     namespace CELLCOLORS
     {
-            const sf::Color WALL(0,0,0);
+            const sf::Color WALL(255,255,255);
             const sf::Color START(100, 255, 0);
             const sf::Color CURRENT(120, 120, 45);
     }

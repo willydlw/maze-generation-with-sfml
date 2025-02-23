@@ -5,21 +5,19 @@
 
 namespace mazegen
 {
+    // Maze Drawing Defaults
+    constexpr int DEFAULT_WALL_THICKNESS = 4;
+    constexpr int DEFAULT_CELL_SIZE = 80;
+
     // Main Window Size
-    constexpr unsigned int SIMULATION_WINDOW_WIDTH = 800U;
-    constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 800U;
+    constexpr unsigned int SIMULATION_WINDOW_WIDTH = 800U + 2U * DEFAULT_WALL_THICKNESS;
+    constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 800U + 2U * DEFAULT_WALL_THICKNESS;
 
-    namespace MAZE
-    {
-        // Grid Defaults
-        constexpr int DEFAULT_ROWS = 10;
-        constexpr int DEFAULT_COLS = 10;
+   
+    // Grid Size Defaults
+    constexpr int DEFAULT_ROWS = 10;
+    constexpr int DEFAULT_COLS = 10;
 
-        // Maze Drawing Defaults
-        constexpr int DEFAULT_WALL_THICKNESS = 4;
-        constexpr int DEFAULT_CELL_SIZE = 40;
-
-    }
 
     struct MazeConfig {
 
@@ -28,10 +26,10 @@ namespace mazegen
         int cellSize;
         int wallThickness;
 
-        MazeConfig( int numRows = MAZE::DEFAULT_ROWS, 
-                    int numCols = MAZE::DEFAULT_COLS, 
-                    int cellSize = MAZE::DEFAULT_CELL_SIZE, 
-                    int wallThickness = MAZE::DEFAULT_WALL_THICKNESS) : 
+        MazeConfig( int numRows = DEFAULT_ROWS, 
+                    int numCols = DEFAULT_COLS, 
+                    int cellSize = DEFAULT_CELL_SIZE, 
+                    int wallThickness = DEFAULT_WALL_THICKNESS) : 
                     rows(numRows), 
                     cols(numCols), 
                     cellSize(cellSize), 
