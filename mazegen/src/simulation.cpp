@@ -4,6 +4,7 @@
 #include "imgui-SFML.h"         // for ImGui::SFML::* functions and SFML-specific overloads
 
 #include <fstream>
+#include <filesystem>
 #include <iostream>
 #include <optional>
 #include <cstdlib>              // EXIT_FAILURE
@@ -41,6 +42,7 @@ namespace mazegen
         if(!ifs.is_open()){
             std::cerr << "ERROR, " << __func__ << ", failed to open file: "
                 << configFileName << ", using default configuration\n";
+            std::cerr << "current path is " << std::filesystem::current_path() << "\n";
             simconfig = SimConfig();
         }
 
@@ -49,6 +51,9 @@ namespace mazegen
         ifs >> simconfig.framerate;
 
         ifs.close();
+
+        std::cerr << "[INFO] " << __func__ << ", Simulation Configuration\n";
+        std::cerr << simconfig;
 
         init(simconfig);
     }
@@ -71,8 +76,8 @@ namespace mazegen
 
             ImGui::SFML::Update(m_window, deltaClock.restart());
 
-            ImGui::Begin("Hello, world!");
-            ImGui::Button("Look at this pretty button");
+            ImGui::Begin("Control Panel");
+            ImGui::Button("Algorithm");
             ImGui::End();
 
             m_window.clear(sf::Color::Black);
