@@ -24,7 +24,6 @@ namespace mazegen
         constexpr unsigned int MAIN_WINDOW_WIDTH = MAZE_WIDTH + UI_WIDTH;
         constexpr unsigned int MAIN_WINDOW_HEIGHT = MAZE_HEIGHT;
 
-
         // Framerate default
         constexpr unsigned int FRAMERATE = 5;
     }
