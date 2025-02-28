@@ -13,11 +13,15 @@ namespace mazegen
     constexpr unsigned int SIMULATION_WINDOW_WIDTH = 800U + 2U * DEFAULT_WALL_THICKNESS;
     constexpr unsigned int SIMULATION_WINDOW_HEIGHT = 800U + 2U * DEFAULT_WALL_THICKNESS;
 
+    // Framerate default
+    constexpr unsigned int SIMULATION_FRAMERATE = 60;
+
    
     // Grid Size Defaults
     constexpr int DEFAULT_ROWS = 10;
     constexpr int DEFAULT_COLS = 10;
 
+ 
 
     struct MazeConfig {
 
@@ -41,12 +45,15 @@ namespace mazegen
     struct SimConfig{
         unsigned int window_width;
         unsigned int window_height;
+        unsigned int framerate;
         MazeConfig mc;
 
-        SimConfig(int width = SIMULATION_WINDOW_WIDTH, 
-                    int height = SIMULATION_WINDOW_HEIGHT) : 
+        SimConfig(  unsigned int width = SIMULATION_WINDOW_WIDTH, 
+                    unsigned int height = SIMULATION_WINDOW_HEIGHT,
+                    unsigned int framerate = SIMULATION_FRAMERATE) : 
                     window_width(width),
-                    window_height(height) { }
+                    window_height(height),
+                    framerate(framerate) { }
     };
 
     

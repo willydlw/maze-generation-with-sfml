@@ -16,6 +16,8 @@ namespace mazegen
     public:
         explicit Simulation(const char* configFileName = "defaultConfigFile.txt");
 
+        ~Simulation();
+
         void run();
 
     private:
@@ -23,8 +25,12 @@ namespace mazegen
         void init(const SimConfig& sc);
         void loadConfig(const char* configFileName);
 
+
+        // SFML data
+        int m_frameRate;
         sf::RenderWindow m_window;
 
+        // maze algorithm objects
         DFS dfs;
 
     };

@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    mazegen::Simulation sim("./config/defaultConfig.txt");
+    mazegen::Simulation sim("defaultConfig.txt");
     sim.run();
     return 0;
 }
